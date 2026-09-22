@@ -13,7 +13,7 @@
           "token.actions.githubusercontent.com:aud": "sts.amazonaws.com"
         },
         "StringLike": {
-          "token.actions.githubusercontent.com:sub": "repo:Gustavmk/drylabs-site-csv:*"
+          "token.actions.githubusercontent.com:sub": "repo:Gustavmk@35900561/drylabs-site-cv@1380760089:*"
         }
       }
     }
