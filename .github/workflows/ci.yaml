@@ -22,6 +22,20 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v7
 
+      - name: Validate required configuration
+        env:
+          ROLE_ARN: ${{ secrets.AWS_ROLE_ARN }}
+          DIST_ID: ${{ vars.CLOUDFRONT_DISTRIBUTION_ID }}
+        run: |
+          if [ -z "$ROLE_ARN" ]; then
+            echo "::error::Secret AWS_ROLE_ARN não está definido (Settings → Secrets and variables → Actions)."
+            exit 1
+          fi
+          if [ -z "$DIST_ID" ]; then
+            echo "::error::Variable CLOUDFRONT_DISTRIBUTION_ID não está definida (aba Variables)."
+            exit 1
+          fi
+
       - name: Configure AWS credentials (OIDC)
         uses: aws-actions/configure-aws-credentials@v4
         with:

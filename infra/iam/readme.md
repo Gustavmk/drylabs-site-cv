@@ -6,7 +6,7 @@ Este diretório contém a configuração do IAM que permite ao GitHub Actions fa
 
 | Arquivo | Descrição |
 |---|---|
-| `trust-policy.json` | Trust policy que permite ao GitHub OIDC assumir a role, restrita ao repositório e à branch `main`. |
+| `trust-policy.json` | Trust policy que permite ao GitHub OIDC assumir a role, restrita ao repositório e a branch `main`. |
 | `role.json` | Policy de permissões (escopo mínimo) usada pela role de deploy. |
 
 ## Permissões concedidas (`role.json`)
